@@ -10,7 +10,7 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.(js|jsx)?$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         loaders: ['babel']
       }
@@ -23,7 +23,7 @@ module.exports = {
     contentBase: path.resolve('dist')
   },
   resolve: {
-    extensions: ['', '.webpack.js', '.web.js', '.js','.jsx', 'js']
+    extensions: ['','.js','.jsx']
   },
   watch: true
 };
