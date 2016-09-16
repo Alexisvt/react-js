@@ -32,6 +32,11 @@ class UserComponent extends React.Component {
   }
 }
 
+UserComponent.propTypes = {
+  users: React.PropTypes.array.isRequired,
+  actionsprops: React.PropTypes.object.isRequired
+};
+
 const mapStateToProps = (state) => ({
   users: state.users
 });
