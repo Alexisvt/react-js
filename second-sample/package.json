@@ -12,9 +12,11 @@
   "dependencies": {
     "@types/react": "^0.14.34",
     "@types/react-dom": "^0.14.16",
+    "@types/react-router": "^2.0.33",
     "babel-polyfill": "^6.13.0",
     "react": "^15.3.1",
-    "react-dom": "^15.3.1"
+    "react-dom": "^15.3.1",
+    "react-router": "^2.8.1"
   },
   "devDependencies": {
     "@types/node": "^6.0.38",
