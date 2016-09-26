@@ -1,4 +1,6 @@
 // Place your settings in this file to overwrite default and user settings.
 {
-  "eslint.enable": true
+  "eslint.enable": true,
+  "tslint.enable": false,
+  "javascript.validate.enable": false
 }
