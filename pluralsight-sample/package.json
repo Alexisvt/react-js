@@ -12,7 +12,6 @@
   "author": "",
   "license": "",
   "devDependencies": {
-    "@types/node": "^6.0.41",
     "autoprefixer": "6.4.1",
     "babel-core": "^6.0.0",
     "babel-loader": "^6.2.5",
@@ -30,6 +29,8 @@
     "html-webpack-plugin": "2.22.0",
     "open-browser-webpack-plugin": "0.0.2",
     "postcss-loader": "0.13.0",
+    "redux-immutable-state-invariant": "^1.2.3",
+    "redux-logger": "^2.6.1",
     "rimraf": "^2.4.3",
     "style-loader": "^0.13.1",
     "typescript": "^2.0.3",
@@ -38,14 +39,6 @@
     "webpack-dev-server": "1.15.1"
   },
   "dependencies": {
-    "@types/node": "^6.0.41",
-    "@types/react": "^0.14.37",
-    "@types/react-dom": "^0.14.17",
-    "@types/react-redux": "^4.4.32",
-    "@types/react-router": "^2.0.36",
-    "@types/react-router-redux": "^4.0.33",
-    "@types/redux": "^3.5.30",
-    "@types/toastr": "^2.1.30",
     "babel-polyfill": "^6.13.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
