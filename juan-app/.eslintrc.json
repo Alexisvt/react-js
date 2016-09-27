@@ -8,7 +8,6 @@
     },
     "parserOptions": {
         "ecmaFeatures": {
-            "classes": true,
             "jsx": true,
             "experimentalObjectRestSpread": true
         },
