@@ -12,6 +12,10 @@
   "author": "",
   "license": "",
   "devDependencies": {
+    "@types/react": "^0.14.37",
+    "@types/react-dom": "^0.14.17",
+    "@types/react-redux": "^4.4.32",
+    "@types/redux": "^3.5.30",
     "autoprefixer": "6.4.1",
     "babel-core": "^6.0.0",
     "babel-eslint": "^6.1.2",

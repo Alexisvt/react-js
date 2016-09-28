@@ -5,8 +5,8 @@ import * as courseActions from '../../actions/courseActions';
 class CoursesPage extends React.Component {
 
   static propTypes = {
-    dispatch: React.PropTypes.func.isRequired,
-    courses: React.PropTypes.array.isRequired
+    courses: React.PropTypes.array.isRequired,
+    createCourse: React.PropTypes.func.isRequired
   }
 
   constructor(props) {
@@ -27,8 +27,7 @@ class CoursesPage extends React.Component {
   }
 
   onClickSave() {
-    alert(`Saving ${this.state.course.title}`);
-    this.props.dispatch(courseActions.createCourse(this.state.course));
+    this.props.createCourse(this.state.course);
   }
 
   render() {
@@ -61,7 +60,8 @@ function mapStateToProps(state, ownProps) {
 
 function mapDispatchToProps(dispatch) {
   return {
-
+    createCourse: course => dispatch(courseActions.createCourse(course))
   };
 }
-export default connect(mapStateToProps)(CoursesPage);
+
+export default connect(mapStateToProps, mapDispatchToProps)(CoursesPage);
