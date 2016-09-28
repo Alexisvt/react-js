@@ -26,13 +26,15 @@ class AuthorApi {
   static getAllAuthors() {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(Object.assign([], authors));
+        // resolve(Object.assign([], authors));
+        resolve([...authors]);
       }, delay);
     });
   }
 
   static saveAuthor(author) {
-    author = Object.assign({}, author); // to avoid manipulating object passed in.
+    // author = Object.assign({}, author); // to avoid manipulating object passed in.
+    author = {...author}; // to avoid manipulating object passed in.
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         // Simulate server-side validation

@@ -59,7 +59,8 @@ class CourseApi {
   static getAllCourses() {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(Object.assign([], courses));
+        // resolve(Object.assign([], courses));
+        resolve([...courses]);
       }, delay);
     });
   }
