@@ -1,5 +1,5 @@
 import * as types from './actionTypes';
-import courseApi from '../api/mockCourseApi';
+import CourseApi from '../api/mockCourseApi';
 import { smartController } from '../helpers';
 
 export function loadCoursesSuccess(courses) {
@@ -13,7 +13,7 @@ export function loadCourses() {
   return function(dispatch) {
     
     smartController(function*() {
-      const courses = yield courseApi.getAllCourses();
+      const courses = yield CourseApi.getAllCourses();
       dispatch(loadCoursesSuccess(courses));
     });
 
