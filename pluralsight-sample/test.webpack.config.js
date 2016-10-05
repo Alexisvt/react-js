@@ -19,17 +19,17 @@ module.exports = {
     entry: ['babel-polyfill', PATHS.app],
     output: {
         path: PATHS.build,
-        filename: 'bundle.[hash].js',
-        publicPath: '/'
+        filename: 'bundle.js'
     },
     devServer: {
         historyApiFallback: true,
-        hot: true,
         inline: true,
         stats: 'errors-only',
         host: options.host,
-        port: options.port
+        port: options.port,
+        contentBase: PATHS.app
     },
+    target: 'web',
     module: {
         loaders: [{
                 test: /\.(js|jsx)$/,
@@ -44,7 +44,7 @@ module.exports = {
 
             {
                 test: /\.css$/,
-                loaders: ['style', 'css', 'postcss'],
+                loaders: ['style', 'css'],
                 include: PATHS.app
             },
 
@@ -57,33 +57,10 @@ module.exports = {
             },
         ]
     },
-    postcss: function () {
-        return [
-            autoprefixer({
-                browsers: [
-                    '>1%',
-                    'last 4 versions',
-                    'Firefox ESR',
-                    'not ie < 9',
-                ]
-            }),
-        ];
-    },
 
     resolve: {
         extensions: ['', '.js', '.jsx']
     },
 
-    plugins: [
-        new webpack.HotModuleReplacementPlugin({
-            multiStep: true
-        }),
-        new htmlPlugin({
-            template: path.join(PATHS.app, 'index.html'),
-            inject: 'body'
-        }),
-        new openBrowserPlugin({
-            url: `http://${options.host}:${options.port}`
-        })
-    ]
+    watch: true
 };
