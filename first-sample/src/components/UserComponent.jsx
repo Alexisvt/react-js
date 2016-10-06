@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as React from 'react';
 import * as actions from '../actions';
+import Test from './Test';
 
 class UserComponent extends React.Component {
 
@@ -23,10 +24,13 @@ class UserComponent extends React.Component {
           <li>{user.email}</li>
         </ul>));
 
+    const userObj = this.props.users[0];    
+
     return (
       <div>
         <h1>Rendering users</h1>
         {usersList}
+        <Test {...userObj}></Test>
       </div>
     );
   }

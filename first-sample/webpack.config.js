@@ -1,4 +1,5 @@
 var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
   context: path.resolve('src'),
@@ -8,22 +9,28 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    loaders: [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        loaders: ['babel']
-      }
-    ]
+    loaders: [{
+      test: /\.(js|jsx)$/,
+      exclude: /node_modules/,
+      loaders: ['babel']
+    }]
   },
   devServer: {
+    historyApiFallback: true,
+    hot: true,
     inline: true,
-    open: true,
+    stats: 'errors-only',
     port: 3000,
+    host: 'localhost',
+    open: true,
     contentBase: path.resolve('dist')
   },
   resolve: {
-    extensions: ['','.js','.jsx']
+    extensions: ['', '.js', '.jsx']
   },
-  watch: true
+  plugins: [
+    new webpack.HotModuleReplacementPlugin({
+      multiStep: true
+    })
+  ]
 };

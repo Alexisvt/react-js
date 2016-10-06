@@ -19,6 +19,7 @@
     "eslint": "^3.5.0",
     "eslint-plugin-react": "^6.2.2",
     "redux-logger": "^2.6.1",
+    "typescript": "^2.0.3",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.15.2"
   },
