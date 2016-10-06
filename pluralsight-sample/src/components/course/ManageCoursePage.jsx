@@ -46,6 +46,13 @@ class ManageCoursePage extends React.Component {
     browserHistory.push('/courses');
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.course.id != nextProps.course.id) {
+      // Necessary to populate form when existing  course is loaded directly
+      this.setState({course: {...nextProps.course}});
+    }
+  }
+
   updateCourseState(event) {
     const field = event.target.name;
     const course = this.state.course;
