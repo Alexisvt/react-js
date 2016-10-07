@@ -1,3 +1,4 @@
+// @flow
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as React from 'react';
@@ -6,9 +7,7 @@ import Test from './Test';
 
 class UserComponent extends React.Component {
 
-  constructor(props) {
-    super(props);
-  }
+  props: UserComponentProps;
 
   componentDidMount() {
     this.props.actionsprops.getUsersAction();

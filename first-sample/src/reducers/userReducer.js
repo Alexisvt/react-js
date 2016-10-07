@@ -1,11 +1,4 @@
 // @flow
-import type { UserTypes } from '../actions/userActions';
-
-export type UserState = {
-  name: string;
-  age: number;
-  email: string;
-}
 
 const initialState = [{
   name: 'Alexis',

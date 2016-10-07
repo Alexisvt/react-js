@@ -6,7 +6,6 @@
     "**/.svn": true,
     "**/.hg": true,
     "**/.DS_Store": true,
-    "node_modules": false
+    "node_modules": true
   }
-  // ,"flow.path": "C:\\react-js\\first-sample\\node_modules\\flow-bin\\flow-win64-v0.33.0\\flow.exe"
 }
