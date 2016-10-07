@@ -5,9 +5,12 @@
         "es6": true,
         "node": true
     },
+    "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
-            "jsx": true
+            "classes": true,
+            "jsx": true,
+            "experimentalObjectRestSpread": true
         },
         "sourceType": "module"
     },
@@ -19,10 +22,26 @@
         "no-unused-vars": "warn",
         "constructor-super": "warn",
         "valid-typeof": "warn",
-        "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+        "quotes": [
+            "error",
+            "single",
+            {
+                "allowTemplateLiterals": true
+            }
+        ],
         "semi": "error"
     },
     "plugins": [
-        "react"
-    ]
+        "react",
+        "flowtype"
+    ],
+    "extends": [
+        "plugin:flowtype/recommended",
+        "plugin:react/recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings"
+    ],
+    "settings": {
+        "import/resolver": "webpack"
+    }
 }

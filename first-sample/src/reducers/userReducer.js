@@ -1,3 +1,11 @@
+// @flow
+import type { UserTypes } from '../actions/userActions';
+
+export type UserState = {
+  name: string;
+  age: number;
+  email: string;
+}
 
 const initialState = [{
   name: 'Alexis',
@@ -5,7 +13,7 @@ const initialState = [{
   email: 'alexisvt@gmail.com'
 }];
 
-export const userReducer = (state = initialState, action) => {
+export const userReducer = (state: UserState[] = initialState, action: UserTypes) => {
   switch (action.type) {
     case 'GET_USERS':
       return state;
