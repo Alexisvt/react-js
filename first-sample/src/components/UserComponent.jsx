@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import * as React from 'react';
 import * as actions from '../actions';
 import Test from './Test';
+import Sample from './SampleComponent';
 
 class UserComponent extends React.Component {
 
@@ -30,6 +31,7 @@ class UserComponent extends React.Component {
         <h1>Rendering users</h1>
         {usersList}
         <Test {...userObj}></Test>
+        <Sample phone={1} email='hola@mundo.com'></Sample>
       </div>
     );
   }
