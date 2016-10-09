@@ -3,6 +3,7 @@ import CourseApi from '../api/mockCourseApi';
 import {
   smartController
 } from '../helpers';
+import { beginAjaxCall } from './ajaxStatusActions';
 
 export function loadCoursesSuccess(courses) {
   return {
@@ -13,6 +14,7 @@ export function loadCoursesSuccess(courses) {
 
 export function loadCourses() {
   return function (dispatch) {
+    dispatch(beginAjaxCall());
 
     smartController(function* () {
       const courses = yield CourseApi.getAllCourses();
@@ -44,6 +46,7 @@ export function createCourseSuccess(course) {
 export function saveCourse(course) {
   return async function (dispatch, getState) {
     try {
+      dispatch(beginAjaxCall());
       const savedCourse = await CourseApi.saveCourse(course);
       if (course.id) {
         dispatch(updateCourseSuccess(savedCourse));
