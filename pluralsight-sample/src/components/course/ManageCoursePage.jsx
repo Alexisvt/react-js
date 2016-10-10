@@ -1,3 +1,4 @@
+// @flow
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -5,9 +6,20 @@ import * as courseActions from '../../actions/courseActions';
 import CourseForm from './CourseForm';
 import { browserHistory } from 'react-router';
 
+type ManageCoursePageStateTypes = {
+  errors: Object;
+  course: Object;
+};
+
 class ManageCoursePage extends React.Component {
 
-  constructor(props, context) {
+  // defining types
+  state: ManageCoursePageStateTypes;
+  updateCourseState: (event: Object) => void;
+  saveCourse: (event: Object) => Promise<void>;
+  redirect: () => void;
+
+  constructor(props, context: any) {
     super(props, context);
     this.state = {
       course: {...props.course },
@@ -39,11 +51,15 @@ class ManageCoursePage extends React.Component {
         );
   }
 
-  saveCourse(event) {
-    event.preventDefault();
-    this.props.actions.saveCourse(this.state.course);
-    // this.context.router.push('/courses');
+  redirect() {
     browserHistory.push('/courses');
+    // this.context.router.push('/courses');
+  }
+
+  async saveCourse(event): Promise<void> {
+    event.preventDefault();
+    await this.props.actions.saveCourse(this.state.course);
+    this.redirect();
   }
 
   componentWillReceiveProps(nextProps) {
