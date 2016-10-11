@@ -32,29 +32,25 @@ module.exports = {
     },
     module: {
         loaders: [{
-                test: /\.(js|jsx)$/,
-                loader: 'babel',
-                exclude: /(node_modules|bower_components)/,
-                query: {
-                    cacheDirectory: true,
-                    presets: ['es2015', 'react', 'stage-3'],
-                    plugins: ['transform-object-rest-spread', 'transform-class-properties']
-                }
-            },
-
-            {
-                test: /\.css$/,
-                loaders: ['style', 'css', 'postcss'],
-                include: PATHS.app
-            },
-
-            {
-                test: /\.(ico|jpg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
-                loader: 'file',
-                query: {
-                    name: '[path][name].[ext]'
-                }
-            },
+            test: /\.(js|jsx)$/,
+            loader: 'babel',
+            exclude: /(node_modules|bower_components)/,
+            query: {
+                cacheDirectory: true,
+                presets: ['es2015', 'react', 'stage-3'],
+                plugins: ['transform-object-rest-spread', 'transform-class-properties']
+            }
+        },
+        { test: /(\.css)$/, loaders: ['style', 'css'] },
+        { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file' },
+        {
+            test: /\.(jpg|png)$/,
+            loader: 'file?name=[path][name].[hash].[ext]',
+            include: PATHS.images
+        },
+        { test: /\.(woff|woff2)$/, loader: 'url?prefix=font/&limit=5000' },
+        { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream' },
+        { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml' }
         ]
     },
     postcss: function () {
@@ -84,6 +80,6 @@ module.exports = {
         }),
         new openBrowserPlugin({
             url: `http://${options.host}:${options.port}`
-        })
+        }),
     ]
 };

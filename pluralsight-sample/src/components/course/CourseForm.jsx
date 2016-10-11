@@ -1,8 +1,11 @@
+// @flow
 import * as React from 'react';
 import TextInput from '../../common/TextInput';
 import SelectInput from '../../common/SelectInput';
 
-const CouseForm = ({course, allAuthors, onSave, onChange, loading, errors}) => {
+type CourseFormsPropsType = { course: Object; allAuthors: mixed[]; onSave: Function; onChange: Function; saving: boolean; errors: Object };
+
+const CouseForm = ({course, allAuthors, onSave, onChange, saving, errors}: CourseFormsPropsType) => {
   return (
     <form >
       <h1>Manage Course</h1>
@@ -23,7 +26,7 @@ const CouseForm = ({course, allAuthors, onSave, onChange, loading, errors}) => {
         onChange={onChange} error={errors.authorId}
         ></SelectInput>
 
-        <TextInput
+      <TextInput
         name='category'
         label='Category'
         value={course.category}
@@ -31,7 +34,7 @@ const CouseForm = ({course, allAuthors, onSave, onChange, loading, errors}) => {
         error={errors.category}
         ></TextInput>
 
-        <TextInput
+      <TextInput
         name='length'
         label='Length'
         value={course.length}
@@ -39,23 +42,23 @@ const CouseForm = ({course, allAuthors, onSave, onChange, loading, errors}) => {
         error={errors.length}
         ></TextInput>
 
-        <input 
-          type="submit"
-          disabled={loading}
-          value={loading ? 'Saving...' : 'Save'}
-          className='btn btn-primary'
-          onClick={onSave}
-          />
+      <input
+        type="submit"
+        disabled={saving}
+        value={saving ? 'Saving...' : 'Save'}
+        className='btn btn-primary'
+        onClick={onSave}
+        />
     </form>
   );
 };
 
 CouseForm.propTypes = {
-  course: React.PropTypes.object.isRequired, 
-  allAuthors: React.PropTypes.array, 
-  onSave: React.PropTypes.func.isRequired, 
-  onChange: React.PropTypes.func.isRequired, 
-  loading: React.PropTypes.bool, 
+  course: React.PropTypes.object.isRequired,
+  allAuthors: React.PropTypes.array,
+  onSave: React.PropTypes.func.isRequired,
+  onChange: React.PropTypes.func.isRequired,
+  saving: React.PropTypes.bool.isRequired,
   errors: React.PropTypes.object
 };
 
