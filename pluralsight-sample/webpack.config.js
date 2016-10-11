@@ -5,9 +5,9 @@ const htmlPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
 const PATHS = {
-    app: path.join(__dirname, 'src'),
-    images: path.join(__dirname, 'src/assets/'),
-    build: path.join(__dirname, 'dist')
+    app: path.resolve('src'),
+    images: path.resolve('src/assets/'),
+    build: path.resolve('dist')
 };
 
 const options = {
