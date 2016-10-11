@@ -3,7 +3,7 @@ import CourseApi from '../api/mockCourseApi';
 import {
   smartController
 } from '../helpers';
-import { beginAjaxCall } from './ajaxStatusActions';
+import { beginAjaxCall, ajaxCallError } from './ajaxStatusActions';
 
 export function loadCoursesSuccess(courses) {
   return {
@@ -21,11 +21,6 @@ export function loadCourses() {
       dispatch(loadCoursesSuccess(courses));
     });
 
-    // return courseApi.getAllAuthors().then( courses => {
-    //   dispatch(loadCoursesSuccess());
-    // }).catch(error => {
-    //   throw(error);
-    // });
   };
 }
 
@@ -54,6 +49,7 @@ export function saveCourse(course) {
         dispatch(createCourseSuccess(savedCourse));
       }
     } catch (error) {
+      dispatch(ajaxCallError(error));
       throw (error);
     }
 

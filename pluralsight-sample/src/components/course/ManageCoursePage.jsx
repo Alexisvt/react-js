@@ -57,17 +57,23 @@ class ManageCoursePage extends React.Component {
   }
 
   redirect() {
+    this.setState({ saving: false });
+    toastr.success('Course saved');
     browserHistory.push('/courses');
     // this.context.router.push('/courses');
-    toastr.success('Course saved');
   }
 
   async saveCourse(event): Promise<void> {
     event.preventDefault();
     this.setState({ saving: true });
-    await this.props.actions.saveCourse(this.state.course);
-    this.setState({ saving: false });
-    this.redirect();
+    try {
+      await this.props.actions.saveCourse(this.state.course);
+      this.redirect();
+    } catch (error) {
+      toastr.error(error);
+      this.setState({ saving: false });
+    }
+
   }
 
   componentWillReceiveProps(nextProps) {
