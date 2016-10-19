@@ -1,0 +1,38 @@
+{
+  "name": "universal-react",
+  "version": "1.0.0",
+  "description": "simple universal react sample",
+  "main": "index.js",
+  "author": "alexis villegas torres",
+  "license": "MIT",
+  "scripts": {
+    "start": "babel-node server.jsx",
+    "build": "webpack"
+  },
+  "dependencies": {
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-router": "^2.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^6.0.45",
+    "@types/react": "^0.14.41",
+    "@types/react-dom": "^0.14.18",
+    "@types/react-router": "^2.0.38",
+    "babel-cli": "^6.16.0",
+    "babel-eslint": "^7.0.0",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-transform-flow-strip-types": "^6.14.0",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-3": "^6.17.0",
+    "eslint": "^3.8.1",
+    "eslint-import-resolver-webpack": "^0.6.0",
+    "eslint-plugin-flowtype": "^2.20.0",
+    "eslint-plugin-import": "^2.0.1",
+    "eslint-plugin-react": "^6.4.1",
+    "webpack": "^1.13.2"
+  }
+}
