@@ -1,0 +1,8 @@
+{
+  "importScripts": [
+    "js/sw-toolbox.js",
+    "js/runtime-caching.js"
+  ],
+  "stripPrefix": "src/static/",
+  "verbose": true
+}
