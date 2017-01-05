@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "precache": "sw-precache --root=src/static --config=sw-precache-config.json",
-    "serve": "babel-node src/server.js",
+    "serve": "cross-env NODE_ENV=development babel-node src/server.js",
     "build": "webpack -p && npm run precache"
   },
   "keywords": [],
@@ -30,6 +29,7 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-3": "^6.17.0",
     "babel-register": "^6.18.0",
+    "cross-env": "^3.1.4",
     "eslint": "^3.12.2",
     "eslint-plugin-flowtype": "^2.29.2",
     "eslint-plugin-react": "^6.8.0",
