@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container h2 {
+  font-size: 4rem;
+}
+
+.container a {
+  font-size: 1.4rem;
+}
+
+.btnContainer {
+  display: flex;
+}
+
+.btn {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0 5px;
+}
+
+.btnGreen {
+  background-color: #4CAF50; /* Green */
+}
