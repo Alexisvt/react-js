@@ -4,18 +4,20 @@ import { TodoItem } from './TodoItem';
 
 interface ITodoListProps {
   todosElements: ITodo[];
+  handleToggle(id: number): void;
 }
 
-export const TodoList = ({todosElements}: ITodoListProps) => (
+export const TodoList = ({todosElements, handleToggle}: ITodoListProps) => (
   <div className="Todo-List">
     <ul>
       {todosElements.map((todo) => (
-        <TodoItem key={todo.id} {...todo} />
+        <TodoItem key={todo.id} {...todo} handleToggle={handleToggle} />
       ))}
     </ul>
   </div>
 );
 
 TodoList.propTypes = {
-  todosElements: PropTypes.array.isRequired
+  todosElements: PropTypes.array.isRequired,
+  handleToggle: PropTypes.func.isRequired
 };
