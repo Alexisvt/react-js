@@ -1,0 +1,28 @@
+{
+  "name": "my-razzle-app",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "razzle start",
+    "build": "razzle build",
+    "start:prod": "NODE_ENV=production node build/server.js"
+  },
+  "dependencies": {
+    "express": "^4.15.2",
+    "gitbook-cli": "^2.3.0",
+    "global": "^4.3.2",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-router-dom": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^7.0.18",
+    "@types/react": "^15.0.24",
+    "@types/react-dom": "^15.5.0",
+    "@types/react-router-dom": "^4.0.4",
+    "babel-eslint": "^7.2.3",
+    "eslint": "^3.19.0",
+    "eslint-plugin-react": "^7.0.1",
+    "razzle": "latest"
+  }
+}
